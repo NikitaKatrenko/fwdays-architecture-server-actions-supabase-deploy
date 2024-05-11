@@ -4,7 +4,7 @@ import DeleteTodoButton from "@/components/DeleteTodoButton";
 
 export default async function TodoList() {
   const supabase = createClient();
-  const { data, error } = await supabase.from("todos").select("id, todo");
+  const { data } = await supabase.from("todos").select("id, todo");
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-indigo-900 via-purple-900 to-pink-900 dark:from-indigo-800 dark:via-purple-800 dark:to-pink-800 flex flex-col items-center justify-center">
@@ -43,7 +43,10 @@ export default async function TodoList() {
         <ul className="space-y-4">
           {data &&
             data.map((todo) => (
-              <li key={todo.id} className="bg-indigo-100 dark:bg-indigo-800 px-4 py-2 rounded-md shadow-md flex justify-between items-center">
+              <li
+                key={todo.id}
+                className="bg-indigo-100 dark:bg-indigo-800 px-4 py-2 rounded-md shadow-md flex justify-between items-center"
+              >
                 <span className="text-indigo-800 dark:text-indigo-200 font-semibold">
                   {todo.todo}
                 </span>

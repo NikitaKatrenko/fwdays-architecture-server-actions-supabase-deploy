@@ -9,7 +9,7 @@ export default async function TodoList() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-indigo-900 via-purple-900 to-pink-900 dark:from-indigo-800 dark:via-purple-800 dark:to-pink-800 flex flex-col items-center justify-center">
       <h2 className="text-4xl font-bold text-white mb-8">
-        Server Actions Demo
+        Server Actions Demo Vercel
       </h2>
       <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
         <form action={addTodo} method="POST" className="mb-8">
